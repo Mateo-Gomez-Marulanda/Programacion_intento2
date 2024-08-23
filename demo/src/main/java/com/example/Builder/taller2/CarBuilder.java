@@ -1,11 +1,18 @@
 package com.example.Builder.taller2;
 
 public class CarBuilder {
+
+    private String model;
     private String engine;
     private String transmission;
     private int wheels;
     private String color;
     private boolean airConditioning;
+
+    public CarBuilder setModel(String model){
+        this.model = model;
+        return this;
+    }
 
     public CarBuilder setEngine(String engine){
         this.engine = engine;
@@ -33,6 +40,8 @@ public class CarBuilder {
     }
 
     public Car build(){
-        return new Car(this.engine, this.transmission,this.wheels, this.color, this.airConditioning);
+        return new Car(this.model, this.engine, this.transmission,this.wheels, this.color, this.airConditioning);
     }
 }
+
+
